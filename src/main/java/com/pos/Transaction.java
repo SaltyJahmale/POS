@@ -10,19 +10,12 @@ public abstract class Transaction {
     Inventory inventory = Inventory.getTheInventory();
     TransactionType transactionType;
 
-    public void addProduct(Product product) {
-        inventory.addProduct(product);
-    }
 
-    public void refundProduct(Product product) {
-        inventory.refundProduct(product);
-    }
 }
 
 class Sale extends Transaction {
 
     public Sale() {
-
         transactionType = TransactionType.SALE;
     }
 

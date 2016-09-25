@@ -23,18 +23,18 @@ public class ProductResource {
         return inventory.searchProductDigitcode(digitcode);
     }
 
-    @POST
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response postMethod(Product product, @Context UriInfo uriInfo) {
-
-        UriBuilder uriBuilder = uriInfo.getAbsolutePathBuilder();
-        uriBuilder.path(product.getDigitcode());
-
-        if(inventory.addProduct(product)) {
-            return Response.created(uriBuilder.build()).build();
-        } else {
-            return Response.status(400).build();
-        }
-
-    }
+//    @POST
+//    @Consumes(MediaType.APPLICATION_JSON)
+//    public Response postMethod(Product product, @Context UriInfo uriInfo) {
+//
+//        UriBuilder uriBuilder = uriInfo.getAbsolutePathBuilder();
+//        uriBuilder.path(product.getDigitcode());
+//
+//        if(inventory.addProduct(product)) {
+//            return Response.created(uriBuilder.build()).build();
+//        } else {
+//            return Response.status(400).build();
+//        }
+//
+//    }
 }

@@ -21,9 +21,12 @@ public class Inventory {
             return inventory;
     }
 
-    public boolean addProduct(Product product) {
+    public void addProduct(Product product) {
         inventoryList.add(product);
-        return true;
+    }
+
+    public List<Product> getInventoryList() {
+        return inventoryList;
     }
 
 

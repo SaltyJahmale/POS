@@ -19,6 +19,13 @@ public class Main {
         switch(ads) {
             case "SALE":
 
+
+                ApplicationSession applicationSession = new ApplicationSession();
+                Employee employee = new Employee("Marin", 12);
+                ProductSpec productSpec1 = new ProductSpec("Fanta", "Best refreshment drink");
+                Product product2 = new Product("89012", 25.25, productSpec1);
+
+                applicationSession.createReceit(product2, employee);
                 System.out.println("The search result with the digitcode 4567 \n" + inventory.searchProductDigitcode("4567"));
 
                 break;
