@@ -1,5 +1,7 @@
 package com.pos;
 
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.util.Scanner;
 
 /**
@@ -9,41 +11,44 @@ public class Main {
 
     public static void main(String[] args) {
 
+        ApplicationSession applicationSession = new ApplicationSession();
         Inventory inventory = Inventory.getTheInventory();
+        Transaction transaction = new Sale();
+
         System.out.println("This is the reservation menu.");
         System.out.println("Please enter one of the following options to start a transaction.");
         System.out.println("'SALE', 'REFUND', 'RESERVATION'");
 
         Scanner in = new Scanner(System.in);
-        String ads = in.nextLine();
-        switch(ads) {
+        String input = in.nextLine();
+
+        switch(input) {
             case "SALE":
 
-
-                ApplicationSession applicationSession = new ApplicationSession();
                 Employee employee = new Employee("Marin", 12);
+
                 ProductSpec productSpec1 = new ProductSpec("Fanta", "Best refreshment drink");
                 Product product2 = new Product("89012", 25.25, productSpec1);
 
                 applicationSession.createReceit(product2, employee);
-                System.out.println("The search result with the digitcode 4567 \n" + inventory.searchProductDigitcode("4567"));
+
+                System.out.println("The search result with the digitcode 4567 \n" + transaction.searchProductDigitcode("4567"));
 
                 break;
             case "REFUND":
 
-                ProductSpec productSpec3 = new ProductSpec("Spa Blue", "Finest mineral water");
-                Product product3 = new Product("0123", 12.50, productSpec3);
-                System.out.println("Product in the receipt\n" + product3);
-
-                ProductSpec productSpec4 = new ProductSpec("Coca Cola", "Best refreshment drink");
-                Product product4 = new Product("4567", 25.25, productSpec4);
-                System.out.println("Product in the receipt\n" + product4);
-                System.out.println("");
-
                 System.out.println("Refunding the product with the digit number 4567");
                 System.out.println("");
 
-                System.out.println("The search result with the digitcode 4567 \n" + inventory.searchProductDigitcode("4567"));
+                ProductSpec productSpec3 = new ProductSpec("Tonic", "Water refreshment drink");
+                Product product3 = new Product("8912", 25.25, productSpec3);
+                inventory.getInventoryList().add(product3);
+
+                System.out.println("The inventory before " + inventory.getInventoryList());
+
+                applicationSession.createRefund(product3);
+                System.out.println("The inventory after " + inventory.getInventoryList());
+                System.out.println("The search result with the digitcode 8912 \n" + transaction.searchProductDigitcode("8912"));
 
                 break;
             case "RESERVATION":
@@ -60,7 +65,7 @@ public class Main {
 
                 break;
             default:
-                System.out.println("Please enter one of the three opnions 'SALE', 'REFUND', 'RESERVATION' ");;
+                System.out.println("Please enter one of the three opnions 'SALE', 'REFUND', 'RESERVATION' ");
         }
 
     }
@@ -72,8 +77,8 @@ public class Main {
         ProductSpec productSpec1 = new ProductSpec("Coca Cola", "Best refreshment drink");
         Product product1 = new Product("4567", 25.25, productSpec1);
 
-        inventory.addProduct(product);
-        inventory.addProduct(product1);
+        inventory.getInventoryList().add(product);
+        inventory.getInventoryList().add(product1);
 
     }
 

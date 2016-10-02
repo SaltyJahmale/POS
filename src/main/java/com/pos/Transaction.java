@@ -10,6 +10,14 @@ public abstract class Transaction {
     Inventory inventory = Inventory.getTheInventory();
     TransactionType transactionType;
 
+    public Product searchProductDigitcode(String digicode) {
+        for (Product product : inventory.getInventoryList()) {
+            if (product.getDigitcode().equals(digicode)) {
+                return product;
+            }
+        }
+        return null;
+    }
 
 }
 
@@ -17,6 +25,11 @@ class Sale extends Transaction {
 
     public Sale() {
         transactionType = TransactionType.SALE;
+        System.out.println(transactionType);
+    }
+
+    public void addProduct(Product product) {
+        inventory.getInventoryList().add(product);
     }
 
 }
@@ -25,7 +38,13 @@ class Refund extends Transaction {
 
     public Refund() {
         transactionType = TransactionType.REFUND;
+        System.out.println(transactionType);
     }
+
+    public void refundProduct(Product product) {
+        inventory.getInventoryList().remove(product);
+    }
+
 }
 
 class Reservation extends Transaction {
@@ -39,6 +58,7 @@ class Reservation extends Transaction {
 
     public Reservation() {
         transactionType = TransactionType.RESERVATION;
+        System.out.println(transactionType);
     }
 
     public double reserveProduct(Product product) {

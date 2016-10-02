@@ -21,26 +21,8 @@ public class Inventory {
             return inventory;
     }
 
-    public void addProduct(Product product) {
-        inventoryList.add(product);
-    }
-
     public List<Product> getInventoryList() {
         return inventoryList;
-    }
-
-
-    public void refundProduct(Product product) {
-        inventoryList.remove(product);
-    }
-
-    public Product searchProductDigitcode(String digicode) {
-        for (Product product : inventoryList) {
-            if (product.getDigitcode().equals(digicode)) {
-                return product;
-            }
-        }
-        return null;
     }
 
 }

@@ -7,7 +7,7 @@ public enum TransactionType {
 
     SALE, REFUND, RESERVATION;
 
-    public String typeOfTransaction() {
+    String typeOfTransaction() {
         switch (this) {
             case SALE:
                 return "SALE";
