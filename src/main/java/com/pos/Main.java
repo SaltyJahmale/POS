@@ -13,7 +13,7 @@ public class Main {
 
         ApplicationSession applicationSession = new ApplicationSession();
         Inventory inventory = Inventory.getTheInventory();
-        Transaction transaction = new Sale();
+        TransactionFactory transaction = new TransactionFactory();
 
         System.out.println("This is the reservation menu.");
         System.out.println("Please enter one of the following options to start a transaction.");
@@ -32,7 +32,7 @@ public class Main {
 
                 applicationSession.createReceit(product2, employee);
 
-                System.out.println("The search result with the digitcode 4567 \n" + transaction.searchProductDigitcode("4567"));
+                System.out.println("The search result with the digitcode 4567 \n" + transaction.getSalesTransaction().searchProductDigitcode("4567"));
 
                 break;
             case "REFUND":
@@ -48,20 +48,17 @@ public class Main {
 
                 applicationSession.createRefund(product3);
                 System.out.println("The inventory after " + inventory.getInventoryList());
-                System.out.println("The search result with the digitcode 8912 \n" + transaction.searchProductDigitcode("8912"));
+                System.out.println("The search result with the digitcode 8912 \n" + transaction.getRefundTransaction().searchProductDigitcode("8912"));
 
                 break;
             case "RESERVATION":
-                Customer customer = new Customer("0123", "Marti");
 
+                Customer customer = new Customer("0123", "Marti");
                 ProductSpec productSpec5 = new ProductSpec("Spa Blue", "Finest mineral water");
                 Product product5 = new Product("0123", 12.50, productSpec5);
-                System.out.println("Product in the receipt\n" + product5);
+                System.out.println("Reservation of the product \n" + product5);
 
-                ProductSpec productSpec6 = new ProductSpec("Coca Cola", "Best refreshment drink");
-                Product product6 = new Product("4567", 25.25, productSpec6);
-                System.out.println("Product in the receipt\n" + product6);
-                System.out.println("");
+                applicationSession.createReservation(customer, product5);
 
                 break;
             default:

@@ -21,7 +21,10 @@ public class ApplicationSession  {
         refund.refundProduct(product);
     }
 
-    public void createReservation(Product product, Customer customer) {
-        
+    public void createReservation(Customer customer, Product product) {
+        Reservation reservation = new Reservation();
+        reservation.reservateProduct(customer, product);
+        System.out.println("The " + customer + " has reserved this " + product);
+
     }
 }

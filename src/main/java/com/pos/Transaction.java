@@ -1,5 +1,6 @@
 package com.pos;
 
+import java.util.HashMap;
 import java.util.Map;
 
 
@@ -10,9 +11,9 @@ public abstract class Transaction {
     Inventory inventory = Inventory.getTheInventory();
     TransactionType transactionType;
 
-    public Product searchProductDigitcode(String digicode) {
+    public Product searchProductDigitcode(String digitcode) {
         for (Product product : inventory.getInventoryList()) {
-            if (product.getDigitcode().equals(digicode)) {
+            if (product.getDigitcode().equals(digitcode)) {
                 return product;
             }
         }
@@ -52,8 +53,7 @@ class Reservation extends Transaction {
     private double sum;
     private double totalPayment;
     private double advancePayment;
-    private boolean reserved = false;
-    protected Map<Product, Double> reservedProduct;
+    private Map<Customer, Product> reservedProduct = new HashMap<>();
 
 
     public Reservation() {
@@ -74,9 +74,13 @@ class Reservation extends Transaction {
         return sum;
     }
 
-    public void reservateProduct(Product product, Double price ) {
-        reservedProduct.put(product, price);
+    public void setMap(Map reservedProduct) {
+        this.reservedProduct = reservedProduct;
     }
 
+
+    public void reservateProduct(Customer customer, Product product ) {
+        reservedProduct.put(customer, product);
+    }
 }
 

@@ -26,29 +26,27 @@
     <dependencies>
         <dependency>
             <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+                <artifactId>lombok</artifactId>
             <version>1.16.10</version>
         </dependency>
 
         <dependency>
             <groupId>javax.ws.rs</groupId>
-            <artifactId>javax.ws.rs-api</artifactId>
+                <artifactId>javax.ws.rs-api</artifactId>
             <version>2.0.1</version>
         </dependency>
 
         <dependency>
             <groupId>com.fasterxml.jackson.jaxrs</groupId>
-            <artifactId>jackson-jaxrs-json-provider</artifactId>
+                <artifactId>jackson-jaxrs-json-provider</artifactId>
             <version>2.5.1</version>
         </dependency>
 
         <dependency>
             <groupId>com.fasterxml.jackson.jaxrs</groupId>
-            <artifactId>jackson-jaxrs-xml-provider</artifactId>
+                <artifactId>jackson-jaxrs-xml-provider</artifactId>
             <version>2.5.1</version>
         </dependency>
-
-
     </dependencies>
 
 
