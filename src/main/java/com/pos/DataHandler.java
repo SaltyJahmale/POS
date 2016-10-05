@@ -1,8 +1,8 @@
 package com.pos;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
-import oracle.jdbc.pool.OracleDataSource;
 
 /**
  * Created by dewi on 05.10.16.
@@ -19,10 +19,8 @@ public class DataHandler {
     Connection connection;
 
     public void getDBConnection() throws SQLException {
-        OracleDataSource ds = new OracleDataSource();
-        ds.setURL(jdbcUrl);
-        connection = ds.getConnection(userid, password);
-
+        
+        connection = DriverManager.getConnection(jdbcUrl, userid, password);
         System.out.println("Connected to db");
     }
 
