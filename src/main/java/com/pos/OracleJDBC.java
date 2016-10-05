@@ -5,5 +5,5 @@ package com.pos;
  */
 public class OracleJDBC {
 
-//  TODO: add jdbc driver
+
 }

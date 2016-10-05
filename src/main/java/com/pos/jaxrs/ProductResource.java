@@ -1,7 +1,6 @@
 package com.pos.jaxrs;
 
 import com.pos.*;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.*;
 

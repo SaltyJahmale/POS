@@ -2,6 +2,7 @@ package com.pos;
 
 import com.sun.org.apache.xpath.internal.SourceTree;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 /**

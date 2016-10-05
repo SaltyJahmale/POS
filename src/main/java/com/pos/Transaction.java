@@ -69,7 +69,6 @@ class Reservation extends Transaction {
             advancePayment = product.getPrice() * 0.1;
 
             sum = totalPayment - advancePayment;
-//           TODO: reserved = true;
         }
         return sum;
     }

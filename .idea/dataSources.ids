@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Oracle - @localhost [2]" uuid="0124e3ae-f3ae-4475-ab6d-da4677f42258">
+    <database-info product="Oracle" version="Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production" jdbc-version="4.0" driver-name="Oracle JDBC driver" driver-version="12.1.0.2.0">
+      <extra-name-characters>$#</extra-name-characters>
+      <identifier-quote-string>&quot;</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="ORACLE" format-version="2.6">
+      <schema id="1" name="STEVE">
+        <object-id>49</object-id>
+        <visible>1</visible>
+        <introspection-timestamp>2016-10-05.11:00:24</introspection-timestamp>
+      </schema>
+      <schema id="2" name="PUBLIC">
+        <object-id>1</object-id>
+      </schema>
+      <schema id="3" name="SYS"/>
+      <schema id="4" name="SYSTEM">
+        <object-id>5</object-id>
+      </schema>
+      <schema id="5" name="OUTLN">
+        <object-id>9</object-id>
+      </schema>
+      <schema id="6" name="CTXSYS">
+        <object-id>32</object-id>
+      </schema>
+      <schema id="7" name="XDB">
+        <object-id>34</object-id>
+      </schema>
+      <schema id="8" name="ANONYMOUS">
+        <object-id>35</object-id>
+      </schema>
+      <schema id="9" name="MDSYS">
+        <object-id>42</object-id>
+      </schema>
+      <schema id="10" name="HR">
+        <object-id>43</object-id>
+      </schema>
+      <schema id="11" name="FLOWS_FILES">
+        <object-id>44</object-id>
+      </schema>
+      <schema id="12" name="APEX_PUBLIC_USER">
+        <object-id>45</object-id>
+      </schema>
+      <schema id="13" name="APEX_040000">
+        <object-id>47</object-id>
+      </schema>
+      <schema id="14" name="XS$NULL">
+        <object-id>2147483638</object-id>
+      </schema>
+    </database-model>
+  </data-source>
+</component>
